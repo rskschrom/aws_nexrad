@@ -2,6 +2,7 @@ import boto3
 from numpy import array, argmin, abs
 import os
 
+# function to convert string time into number of seconds past midnight
 def tstring2secs(tstring):
     h = float(tstring[0:2])
     m = float(tstring[2:4])
@@ -29,6 +30,7 @@ keys = [o.key for o in objs]
 fnames = [k.split('/')[-1] for k in keys]
 times = [f.split('_')[1] for f in fnames]
 
+# remove erroneous files with 'NEXRAD' in name
 numtimes = 0
 for t in times:
     if t=='NEXRAD':
@@ -38,13 +40,11 @@ for t in times:
 
 times_valid = times[0:numtimes-1]
 secs = [tstring2secs(t) for t in times_valid]
-print secs
 want_secs = tstring2secs(want_time)
 
 # get file with closest time to want time
 secs_arr = array(secs)
 closeind = argmin(abs(secs_arr-want_secs))
-print fnames[closeind]
 
 # download file
 dkey = keys[closeind]
