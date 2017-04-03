@@ -1,0 +1,26 @@
+#! /bin/bash
+
+# use first command line argument for filename
+#module load Radx/system
+fname=$1
+
+# get site, date, and time information from filename
+site=${fname:0:4}
+yyyy=${fname:4:4}
+mm=${fname:8:2}
+dd=${fname:10:2}
+hh=${fname:13:2}
+mn=${fname:15:2}
+ss=${fname:17:2}
+newfname=$site$yyyy$mm$dd'_'$hh$mn'.nc'
+
+# convert file to cfradial and rename file into current directory
+RadxConvert -f $1 -cfradial -outdir .
+outfname=$(ls $yyyy$mm$dd)
+mv $yyyy$mm$dd/$outfname $newfname
+rm -R $yyyy$mm$dd
+
+# run python restructure_cfrad.py to map output file from npoint coordinates
+# to range, azimuth, elevation coordinates
+python restructure_cfrad.py $newfname
+

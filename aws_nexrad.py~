@@ -53,7 +53,7 @@ times_valid = times[0:numtimes-1]
 
 # get file with closest time to want time
 secs = [tstring2secs(t) for t in times_valid]
-want_time = '{:02d}{:02d}{:02d}'.format(hh, mn, ss)
+want_time = '{:02d}{:02d}{:02d}'.format(hour, minute, second)
 want_secs = tstring2secs(want_time)
 secs_arr = array(secs)
 closeind = argmin(abs(secs_arr-want_secs))
