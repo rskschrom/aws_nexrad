@@ -39,10 +39,10 @@ for t in times:
         numtimes = numtimes+1
 
 times_valid = times[0:numtimes-1]
-secs = [tstring2secs(t) for t in times_valid]
-want_secs = tstring2secs(want_time)
 
 # get file with closest time to want time
+secs = [tstring2secs(t) for t in times_valid]
+want_secs = tstring2secs(want_time)
 secs_arr = array(secs)
 closeind = argmin(abs(secs_arr-want_secs))
 
