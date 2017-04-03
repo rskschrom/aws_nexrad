@@ -2,7 +2,7 @@ import boto3
 from numpy import array, argmin, abs
 import os
 
-# function to convert string time into number of seconds past midnight
+# function to convert string time 'HHMMSS' into number of seconds past midnight
 def tstring2secs(tstring):
     h = float(tstring[0:2])
     m = float(tstring[2:4])
