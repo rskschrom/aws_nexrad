@@ -9,7 +9,7 @@ cd aws_nexrad
 git clone https://github.com/rskschrom/aws_nexrad.git
 </pre></code>
 
-The boto3 python package is required for this code to work. It can be installed with:
+Numpy and the boto3 python package are required for this code to work. boto3 can be installed with:
 
 `easy_install --user boto3`
 
