@@ -26,12 +26,12 @@ ss = now.second
 
 # optionally enter date and time manually
 '''
-yyyy = '2017'
-mm = '4'
-dd = '26'
-hh = '20'
-mn = '13'
-ss = '0'
+yyyy = 2017
+mm = 4
+dd = 26
+hh = 20
+mn = 13
+ss = 0
 '''
 
 # get keys for restricted files
