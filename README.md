@@ -9,6 +9,12 @@ cd aws_nexrad
 git clone https://github.com/rskschrom/aws_nexrad.git
 </pre></code>
 
+The boto3 python package is required for this code to work. It can be installed with:
+
+`easy_install --user boto3`
+
+You will also need an account on Amazon Web Services that you can create for free at https://aws.amazon.com/?nc2=h_lg. For information about how to set up credentials for AWS see http://boto3.readthedocs.io/en/latest/guide/configuration.html. 
+
 # Usage
 Download NEXRAD data with the `aws_nexrad.py` script. Edit the `radsite` variable to change the NEXRAD site. Either leave the default date and time setting in the script to get the most recent radar volume scan, or uncomment and edit the date and time variables (lines 28-35). You don't need to know the exact time; the script will find the closest time of a radar volume in the archive. Once the appropriate site, date, and time variables are set run the script with:
 
