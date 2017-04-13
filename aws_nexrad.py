@@ -26,11 +26,11 @@ ss = now.second
 
 # optionally enter date and time manually
 '''
-yyyy = 2017
-mm = 4
-dd = 26
-hh = 20
-mn = 13
+yyyy = 2013
+mm = 5
+dd = 31
+hh = 23
+mn = 23
 ss = 0
 '''
 
